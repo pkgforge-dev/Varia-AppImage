@@ -35,7 +35,7 @@ More at: [AnyLinux-AppImages](https://pkgforge-dev.github.io/Anylinux-AppImages/
 
 ---
 
-# Known quirk
+## Known quirk
 - If portable `.config` and/or `.home` directory is used, app fails to launch due to it not detecting `XDG_DOWNLOAD_DIR`.  
   Additionally, if portable `.share` directory is used and flatpak Firefox or Chromium-based browser is installed,  
   link for the extension in settings won't open due to app thinking that flatpak is in the portable share directory.
