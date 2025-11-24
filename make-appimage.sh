@@ -26,6 +26,7 @@ quick-sharun /usr/bin/varia \
              /usr/bin/ffprobe \
              /usr/bin/aria2c \
              /usr/bin/aria2p \
+             /usr/bin/yt-dlp \
              /usr/lib/libgirepository*
 
 # Patch varia's shell script to be POSIX and to use AppImage directories
