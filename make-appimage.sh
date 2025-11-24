@@ -31,7 +31,10 @@ quick-sharun /usr/bin/varia \
 # Patch varia's shell script to be POSIX and to use AppImage directories
 cat << 'EOF' > ./AppDir/bin/varia
 #!/bin/sh
-python3 ./varia-py.py aria2c ffmpeg NOSNAP "$@"
+pythonexec="$(command -v python3)"
+# For some reason, SHARUN_DIR is not exposed here, so I need to get it manually
+sharunbindir="${pythonexec%/*}"
+"$pythonexec" "${sharunbindir}/varia-py.py" "${sharunbindir}/aria2c" "${sharunbindir}/ffmpeg" NOSNAP "$@"
 EOF
 
 # Patch varia's python script to use AppImage directories
