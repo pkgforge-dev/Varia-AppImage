@@ -4,15 +4,11 @@ set -eu
 
 ARCH=$(uname -m)
 
-echo "Installing package dependencies..."
+echo "Building package and its dependencies..."
 echo "---------------------------------------------------------------"
-# pacman -Syu --noconfirm PACKAGESHERE
+make-aur-package aria2p
+make-aur-package varia
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano
-
-# Comment this out if you need an AUR package
-#make-aur-package PACKAGENAME
-
-# If the application needs to be manually built that has to be done down here
