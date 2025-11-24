@@ -22,6 +22,7 @@ export STARTUPWMCLASS=varia # For Wayland, this is 'io.github.giantpinkrobots.va
 quick-sharun /usr/bin/varia \
              /usr/bin/varia-py.py \
              /usr/share/varia \
+             /usr/bin/normalizer \
              /usr/bin/ffmpeg \
              /usr/bin/ffprobe \
              /usr/bin/aria2c \
