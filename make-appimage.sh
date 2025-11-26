@@ -61,8 +61,5 @@ if __name__ == "__main__":
 python -c "$PYTHON_SCRIPT"
 EOF
 
-# Set gsettings to save to keyfile
-echo "GSETTINGS_BACKEND=keyfile" >> ./AppDir/.env
-
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
