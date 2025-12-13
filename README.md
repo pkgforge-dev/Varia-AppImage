@@ -35,9 +35,11 @@ More at: [AnyLinux-AppImages](https://pkgforge-dev.github.io/Anylinux-AppImages/
 
 ---
 
-## Known quirk
+## Known quirks
 - If portable `.config` and/or `.home` directory is used, app fails to launch due to it not detecting `XDG_DOWNLOAD_DIR`.  
   Additionally, if portable `.share` directory is used and flatpak Firefox or Chromium-based browser is installed,  
   link for the extension in settings won't open due to app thinking that flatpak is in the portable share directory.
 - Autostart option in settings doesn't work.  
   Copying the desktop file manually to `$XDG_CONFIG_HOME/autostart/` makes it work.
+- Varia doesn't send the notification when download starts using the browser extension.  
+  Tested on Firefox.
