@@ -40,6 +40,8 @@ More at: [AnyLinux-AppImages](https://pkgforge-dev.github.io/Anylinux-AppImages/
   Additionally, if portable `.share` directory is used and flatpak Firefox or Chromium-based browser is installed,  
   link for the extension in settings won't open due to app thinking that flatpak is in the portable share directory.
 - Autostart option in settings doesn't work.  
-  Copying the desktop file manually to `$XDG_CONFIG_HOME/autostart/` makes it work.
+  Copying the desktop file manually to `$XDG_CONFIG_HOME/autostart/` makes it work.  
+  https://github.com/pkgforge-dev/Varia-AppImage/issues/3
 - Varia doesn't send the notification when download starts using the browser extension.  
-  Tested on Firefox.
+  Tested on Firefox.  
+  https://github.com/pkgforge-dev/Varia-AppImage/issues/4
