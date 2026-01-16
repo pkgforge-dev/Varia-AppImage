@@ -8,9 +8,9 @@ echo "Building package and its dependencies..."
 echo "---------------------------------------------------------------"
 make-aur-package python-emoji-country-flag
 make-aur-package aria2p
-make-aur-package varia
-pacman -Syu --noconfirm python-charset-normalizer libayatana-appindicator
-pacman -Rns python-pystray
+# Switch to the official package when it updates
+make-aur-package
+pacman -Syu --noconfirm python-charset-normalizer
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
