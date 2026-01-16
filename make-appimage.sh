@@ -30,6 +30,10 @@ quick-sharun /usr/bin/varia \
              /usr/bin/yt-dlp \
              /usr/lib/libgirepository*
 
+# Bundle static 7zip, as stracing it through quick-sharun doesn't give desired results
+wget --retry-connrefused --tries=30 "https://pkgs.pkgforge.dev/dl/bincache/$ARCH-linux/7z/official/7z/raw.dl" -O ./AppDir/bin/7z
+chmod +x ./AppDir/bin/7z
+
 # Patch varia's shell script to be POSIX and to use AppImage directories
 cat << 'EOF' > ./AppDir/bin/varia
 #!/bin/sh
