@@ -33,6 +33,10 @@ makedepends=('meson')
 source=("${pkgname}-${pkgver}-2.tar.gz::https://github.com/giantpinkrobots/varia/archive/refs/tags/v${pkgver}-2.tar.gz")
 sha256sums=('a3ee96cdc0d12fa562b07497de31e9d8780a200c34b4d37c07f5bc511d39bd30')
 
+prepare() {
+  mv "$pkgname-$pkgver-2" "$pkgname-$pkgver"
+}
+
 build() {
     arch-meson "${pkgname}-${pkgver}" build
     meson compile -C build
