@@ -29,6 +29,9 @@ quick-sharun /usr/bin/varia \
              /usr/bin/aria2p \
              /usr/bin/yt-dlp \
              /usr/bin/deno \
+             /usr/lib/libayatana* \
+             /usr/share/gir-*/Ayatana* \
+             /usr/lib/girepository-*/Ayatana* \
              /usr/lib/libgirepository*
 
 # Bundle static 7zip, as stracing it through quick-sharun doesn't give desired results
