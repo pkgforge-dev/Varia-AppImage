@@ -2,8 +2,8 @@
 # Contributor: jdigi78 <jdigiovanni78 at gmail dot com>
 
 pkgname=varia
-pkgver=2026.1.5-2
-pkgrel=1
+pkgver=2026.1.5
+pkgrel=2
 pkgdesc="Download manager based on aria2"
 arch=('any')
 url="https://giantpinkrobots.github.io/varia"
@@ -29,7 +29,7 @@ depends=('7zip'
          'python-requests'
          'yt-dlp')
 makedepends=('meson')
-source=("${pkgname}-${pkgver}.tar.gz::https://github.com/giantpinkrobots/varia/archive/refs/tags/v${pkgver}.tar.gz")
+source=("${pkgname}-${pkgver}-2.tar.gz::https://github.com/giantpinkrobots/varia/archive/refs/tags/v${pkgver}-2.tar.gz")
 sha256sums=('a3ee96cdc0d12fa562b07497de31e9d8780a200c34b4d37c07f5bc511d39bd30')
 
 build() {
