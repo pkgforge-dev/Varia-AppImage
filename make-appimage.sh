@@ -44,9 +44,10 @@ mkdir -p "$TARGET_DIR"
 REPO="giantpinkrobots/varia"
 BRANCH="next"
 PATH_DIR="data/icons/hicolor/symbolic/ui"
-curl -s "https://api.github.com/repos/$REPO/contents/$PATH_DIR?ref=$BRANCH" | \
-jq -r '.[] | select(.type == "file") | .download_url' | \
-wget -i - -P "$TARGET_DIR" 
+URLS="$(curl -s "https://api.github.com/repos/$REPO/contents/$PATH_DIR?ref=$BRANCH" | jq -r '.[] | select(.type == "file") | .download_url')"
+for url in $URLS; do
+  wget -P "$TARGET_DIR" "$url"
+done
 
 # Patch varia's shell script to be POSIX and to use AppImage directories
 cat << 'EOF' > ./AppDir/bin/varia
