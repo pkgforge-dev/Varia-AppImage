@@ -38,6 +38,16 @@ quick-sharun /usr/bin/varia \
 wget --retry-connrefused --tries=30 "https://pkgs.pkgforge.dev/dl/bincache/$ARCH-linux/7z/official/7z/raw.dl" -O ./AppDir/bin/7z
 chmod +x ./AppDir/bin/7z
 
+# Download missing icons
+TARGET_DIR="./AppDir/share/icons/hicolor/symbolic/ui/"
+mkdir -p "$TARGET_DIR"
+REPO="giantpinkrobots/varia"
+BRANCH="next"
+PATH_DIR="data/icons/hicolor/symbolic/ui"
+curl -s "https://api.github.com/repos/$REPO/contents/$PATH_DIR?ref=$BRANCH" | \
+jq -r '.[] | select(.type == "file") | .download_url' | \
+wget -i - -P "$TARGET_DIR" 
+
 # Patch varia's shell script to be POSIX and to use AppImage directories
 cat << 'EOF' > ./AppDir/bin/varia
 #!/bin/sh
