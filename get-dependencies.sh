@@ -11,7 +11,7 @@ make-aur-package python-emoji-country-flag
 make-aur-package aria2p
 # Switch to the official package when it updates
 make-aur-package
-pacman -Syu --noconfirm python-charset-normalizer
+pacman -Syu --noconfirm python-charset-normalizer jq
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
