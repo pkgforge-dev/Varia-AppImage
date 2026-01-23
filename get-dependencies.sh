@@ -16,3 +16,4 @@ make-aur-package deno-stable-bin
 make-aur-package python-emoji-country-flag
 make-aur-package aria2p
 make-aur-package varia
+pacman -Rns python-pystray
