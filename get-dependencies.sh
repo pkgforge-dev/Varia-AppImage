@@ -4,7 +4,7 @@ set -eu
 
 ARCH=$(uname -m)
 
-pacman -Syu --noconfirm python-charset-normalizer jq
+pacman -Syu --noconfirm python-charset-normalizer python-appdirs jq
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
@@ -15,5 +15,4 @@ echo "---------------------------------------------------------------"
 make-aur-package deno-stable-bin
 make-aur-package python-emoji-country-flag
 make-aur-package aria2p
-# Switch to the official package when it updates
-make-aur-package
+make-aur-package varia
