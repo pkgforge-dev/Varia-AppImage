@@ -1,3 +1,5 @@
+<div align="center">
+
 # Varia AppImage 🐧
 
 [![GitHub Downloads](https://img.shields.io/github/downloads/pkgforge-dev/Varia-AppImage/total?logo=github&label=GitHub%20Downloads)](https://github.com/pkgforge-dev/Varia-AppImage/releases/latest)
@@ -8,7 +10,11 @@
   <img src="https://raw.githubusercontent.com/giantpinkrobots/varia/refs/heads/next/data/icons/hicolor/scalable/apps/io.github.giantpinkrobots.varia.svg" width="128" />
 </p>
 
-* [Upstream URL](https://giantpinkrobots.github.io/varia/)
+| Latest Stable Release | Upstream URL |
+| :---: | :---: |
+| [Click here](https://github.com/pkgforge-dev/Varia-AppImage/releases/latest) | [Click here](https://giantpinkrobots.github.io/varia/) |
+
+</div>
 
 ---
 
