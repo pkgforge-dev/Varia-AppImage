@@ -7,7 +7,7 @@
 [![Latest Stable Release](https://img.shields.io/github/v/release/pkgforge-dev/Varia-AppImage)](https://github.com/pkgforge-dev/Varia-AppImage/releases/latest)
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/giantpinkrobots/varia/refs/heads/next/data/icons/hicolor/scalable/apps/io.github.giantpinkrobots.varia.svg" width="128" />
+  <img src="https://raw.githubusercontent.com/giantpinkrobots/varia/refs/heads/next/data/icons/apps/io.github.giantpinkrobots.varia.svg" width="128" />
 </p>
 
 | Latest Stable Release | Upstream URL |
