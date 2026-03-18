@@ -4,7 +4,7 @@ set -eu
 
 ARCH=$(uname -m)
 
-pacman -Syu --noconfirm python-charset-normalizer python-appdirs jq
+pacman -Syu --noconfirm 7zip python-charset-normalizer python-appdirs jq
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"

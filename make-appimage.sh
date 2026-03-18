@@ -31,23 +31,8 @@ quick-sharun /usr/bin/varia \
              /usr/lib/libayatana* \
              /usr/share/gir-*/Ayatana* \
              /usr/lib/girepository-*/Ayatana* \
-             /usr/lib/libgirepository*
-
-# Bundle static 7zip
-VER="$(curl -qfsSL "https://api.github.com/repos/ip7z/7zip/releases/latest" | jq -r '.tag_name' | tr -d '"'\''[:space:]')"
-case "$ARCH" in
-    aarch64)
-      wget --retry-connrefused --tries=30 "https://github.com/ip7z/7zip/releases/download/$VER/7z${VER//./}-linux-arm64.tar.xz" -O /tmp/7z.tar.xz
-      ;;
-    x86_64)
-      wget --retry-connrefused --tries=30 "https://github.com/ip7z/7zip/releases/download/$VER/7z${VER//./}-linux-x64.tar.xz" -O /tmp/7z.tar.xz
-      ;;
-esac
-mkdir -p /tmp/7zip/
-tar -xf /tmp/7z.tar.xz -C /tmp/7zip/
-cp /tmp/7zip/7zzs ./AppDir/bin/7z
-chmod +x ./AppDir/bin/7z
-rm -r /tmp/7z.tar.xz /tmp/7zip/
+             /usr/lib/libgirepository* \
+             /usr/lib/7zip/*
 
 # Download missing icons
 TARGET_DIR="./AppDir/share/icons/hicolor/symbolic/ui/"
