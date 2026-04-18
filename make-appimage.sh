@@ -27,7 +27,7 @@ quick-sharun /usr/bin/varia \
              /usr/bin/aria2c \
              /usr/bin/aria2p \
              /usr/bin/yt-dlp \
-             /usr/bin/deno \
+             /usr/bin/bun \
              /usr/lib/libayatana* \
              /usr/share/gir-*/Ayatana* \
              /usr/lib/girepository-*/Ayatana* \
