@@ -37,7 +37,7 @@ quick-sharun /usr/bin/varia \
 # Patch varia's shell script to be POSIX and to use AppImage directories
 cat << 'EOF' > ./AppDir/bin/varia
 #!/bin/sh
-"${APPDIR}/bin/python3" "${APPDIR}/bin/varia-py.py" "${APPDIR}/bin/aria2c" "${APPDIR}/bin/ffmpeg" "${APPDIR}/bin/7z" "${APPDIR}/bin/deno" NOSNAP "$@"
+"${APPDIR}/bin/python3" "${APPDIR}/bin/varia-py.py" "${APPDIR}/bin/aria2c" "${APPDIR}/bin/ffmpeg" "${APPDIR}/bin/7z" "${APPDIR}/bin/bun" NOSNAP "$@"
 EOF
 
 # Patch varia's python script to use AppImage directories
