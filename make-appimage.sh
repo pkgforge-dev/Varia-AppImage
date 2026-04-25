@@ -37,7 +37,50 @@ quick-sharun /usr/bin/varia \
 # Patch varia's shell script to be POSIX and to use AppImage directories
 cat << 'EOF' > ./AppDir/bin/varia
 #!/bin/sh
-"${APPDIR}/bin/python3" "${APPDIR}/bin/varia-py.py" "${APPDIR}/bin/aria2c" "${APPDIR}/bin/ffmpeg" "${APPDIR}/bin/7z" "${APPDIR}/bin/bun" NOSNAP "$@"
+pythonexec="$APPDIR/bin/python"
+
+aria2cexec="$APPDIR/bin/aria2c"
+ffmpegexec="$APPDIR/bin/ffmpeg"
+sevenzexec="$APPDIR/bin/7z"
+jsruntimeexec="$APPDIR/bin/bun"
+jsruntime="bun"
+jsruntimeexecname="bun"
+
+while [ $# -gt 0 ] ; do
+  case $1 in
+	-h|--help) echo "Options:
+	--aria2cexec PATH		Path to aria2c executable
+	--ffmpegexec PATH		Path to ffmpeg executable
+	--sevenzexec PATH		Path to 7z executable
+	--jsruntime NAME		JavaScript runtime name (read by yt-dlp, defaults to bun)
+	--jsruntimeexec PATH	Path to JS runtime executable
+	-h, --help				Show this help message"
+	exit 0 ;;
+	--aria2cexec) aria2cexec="$2"; shift ;;
+	--ffmpegexec) ffmpegexec="$2"; shift ;;
+	--sevenzexec) sevenzexec="$2"; shift ;;
+  --jsruntime) jsruntime="$2"; shift ;;
+	--jsruntimeexec) jsruntimeexec="$2"; shift ;;
+	*) break ;;
+  esac
+  shift
+done
+
+if [ ! -f "$aria2cexec" ] || [ ! -f "$ffmpegexec" ] || [ ! -f "$sevenzexec" ] || [ ! -f "$jsruntimeexec" ]; then
+	echo "Given paths for dependencies not found, searching the system for them..."
+	aria2cexec="$(command -v aria2c)"
+	ffmpegexec="$(command -v ffmpeg)"
+	sevenzexec="$(command -v 7z)"
+	jsruntimeexec="$(command -v $jsruntimeexecname)"
+	if [ ! -f "$aria2cexec" ] || [ ! -f "$ffmpegexec" ] || [ ! -f "$sevenzexec" ] || [ ! -f "$jsruntimeexec" ]; then
+		echo "aria2c and/or ffmpeg and/or 7z and/or the JS runtime (defaults to bun) not found. Exiting."
+		exit 1
+	fi
+fi
+
+echo "Selected JS Runtime name: ${jsruntime}"
+
+$pythonexec "$APPDIR/bin/varia-py.py" "$aria2cexec" "$ffmpegexec" "$sevenzexec" "$jsruntime" "$jsruntimeexec" "NOSNAP" "$@"
 EOF
 
 # Patch varia's python script to use AppImage directories
