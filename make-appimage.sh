@@ -27,7 +27,7 @@ quick-sharun /usr/bin/varia \
              /usr/bin/aria2c \
              /usr/bin/aria2p \
              /usr/bin/yt-dlp \
-             /usr/bin/bun \
+             /usr/bin/qjs \
              /usr/lib/libayatana* \
              /usr/share/gir-*/Ayatana* \
              /usr/lib/girepository-*/Ayatana* \
@@ -42,9 +42,9 @@ pythonexec="$APPDIR/bin/python"
 aria2cexec="$APPDIR/bin/aria2c"
 ffmpegexec="$APPDIR/bin/ffmpeg"
 sevenzexec="$APPDIR/bin/7z"
-jsruntimeexec="$APPDIR/bin/bun"
-jsruntime="bun"
-jsruntimeexecname="bun"
+jsruntimeexec="$APPDIR/bin/qjs"
+jsruntime="quickjs"
+jsruntimeexecname="qjs"
 
 while [ $# -gt 0 ] ; do
   case $1 in
@@ -52,7 +52,7 @@ while [ $# -gt 0 ] ; do
 	--aria2cexec PATH		Path to aria2c executable
 	--ffmpegexec PATH		Path to ffmpeg executable
 	--sevenzexec PATH		Path to 7z executable
-	--jsruntime NAME		JavaScript runtime name (read by yt-dlp, defaults to bun)
+	--jsruntime NAME		JavaScript runtime name (read by yt-dlp, defaults to quickjs)
 	--jsruntimeexec PATH	Path to JS runtime executable
 	-h, --help				Show this help message"
 	exit 0 ;;
@@ -73,7 +73,7 @@ if [ ! -f "$aria2cexec" ] || [ ! -f "$ffmpegexec" ] || [ ! -f "$sevenzexec" ] ||
 	sevenzexec="$(command -v 7z)"
 	jsruntimeexec="$(command -v $jsruntimeexecname)"
 	if [ ! -f "$aria2cexec" ] || [ ! -f "$ffmpegexec" ] || [ ! -f "$sevenzexec" ] || [ ! -f "$jsruntimeexec" ]; then
-		echo "aria2c and/or ffmpeg and/or 7z and/or the JS runtime (defaults to bun) not found. Exiting."
+		echo "aria2c and/or ffmpeg and/or 7z and/or the JS runtime (defaults to quickjs) not found. Exiting."
 		exit 1
 	fi
 fi
