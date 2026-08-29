@@ -16,6 +16,7 @@ export GTK_DIR=gtk-4.0
 export DEPLOY_LOCALE=1
 export STARTUPWMCLASS=io.github.giantpinkrobots.varia # Default to Wayland's wmclass. For X11, GTK_CLASS_FIX will force the wmclass to be the Wayland one.
 export GTK_CLASS_FIX=1
+export USE_HOST_DRIVERS_EXPERIMENTAL=1
 
 # Deploy dependencies
 quick-sharun /usr/bin/varia \
